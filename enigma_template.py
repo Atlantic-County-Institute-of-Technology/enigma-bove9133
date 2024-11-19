@@ -3,7 +3,7 @@
 # custom encoded messages, as well as encode and decode from file.
 # author: mbove
 # created: 11/18/24
-# last update: 11/18/24
+# last update: 11/19/24
 
 import random
 
@@ -13,9 +13,11 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 # user inputs a message and selects a key (or random), the message is then translated using the cipher
 def encode_message():
-    pass
+    message = input("What's your message? ")
+    key = int(input("What's your key? "))
 
 
+# letter at index(((location of letter) + key) %26)
 # encodes a target file, similarly to encode_message, except now targeting a filename
 def encode_file():
     pass
@@ -42,8 +44,10 @@ def main():
               f"[3]: Decode file.\n"
               f"[4]: Exit.")
 
-        selection = input("Choose an option:")
+        selection = input("Choose an option: ")
 
+        # This is so if the user selects 1-4, it will either encode the message, encode the file,
+        # decode the file, or exit the program based on what the user chooses
         if selection == "1":
             encode_message()
         elif selection == "2":
