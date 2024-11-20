@@ -3,7 +3,7 @@
 # custom encoded messages, as well as encode and decode from file.
 # author: mbove
 # created: 11/18/24
-# last update: 11/19/24
+# last update: 11/20/24
 
 import random
 
@@ -15,6 +15,8 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 def encode_message():
     message = input("What's your message? ")
     key = int(input("What's your key? "))
+    for x in range(len(message)):
+        b = alphabet.index(message[x]) + key
 
 
 # letter at index(((location of letter) + key) %26)
