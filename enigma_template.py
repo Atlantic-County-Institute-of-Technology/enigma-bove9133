@@ -15,8 +15,12 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 def encode_message():
     message = input("What's your message? ")
     key = int(input("What's your key? "))
+    output = ""
     for x in range(len(message)):
-        b = alphabet.index(message[x]) + key
+        y = alphabet.index(message[x]) + key
+        z = alphabet[y]
+        output += z
+    print(output)
 
 
 # letter at index(((location of letter) + key) %26)
