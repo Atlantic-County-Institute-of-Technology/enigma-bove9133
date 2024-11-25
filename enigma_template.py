@@ -26,7 +26,14 @@ def encode_message():
 # letter at index(((location of letter) + key) %26)
 # encodes a target file, similarly to encode_message, except now targeting a filename
 def encode_file():
-    pass
+    filename = input("What's your filename? ")
+    key = int(input("What's your key? "))
+    output = ""
+    for x in range(len(filename)):
+        y = alphabet.index(filename[x]) + key
+        z = alphabet[y]
+        output += z
+    print(output)
 
 
 # decodes target file using a user-specified key. If key is unknown, a keypress should
